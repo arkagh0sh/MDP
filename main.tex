@@ -1,13 +1,20 @@
 \documentclass[12pt]{article}
 %
+\usepackage{amsmath}
+%
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{main.bib}
+%
+\usepackage{setspace}
+\onehalfspacing
 %
 \title{Understanding How Markov Decides}
 %
 \author{not Markov}
 %
 \date{}
+%
+\input{macros}
 %
 \begin{document}
 %
@@ -17,11 +24,25 @@
 %
 \section{Markov Decision Processes}
 %
+\[
+\mdp = (\st,\ac,\prob,\rew,\df)
+\]
+%
 \section{From MDP to LP}
 %
 \subsection{Value LP}
 %
 The primal problem is formulated in the following way.
+%
+\[
+\lpMin{$\sum_{s\in\st} \init_s\cdot v_s$}{
+$v_s \geq \rew(s,a) + \df \cdot \sum_{s'\in S} \prob(s,a,s')\cdot v_{s'}
+\quad
+\text{for $s\in \st$ and $a\in \ac$}$
+}
+\]
+where $\init : \st \to [0,1]$ is the initial distribution.
+%
 \subsection{Policy LP}
 %
 The dual problem is formulated in the following way.
