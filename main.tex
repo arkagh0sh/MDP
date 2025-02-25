@@ -107,7 +107,7 @@ hence we do not need to delete any rows.
 Let $A = \transpose{(I_{\ac} - \lambda\cdot\prob)}$.
 Using \cite[equation 11.8]{vishnoi} we get that the Newton step is:
 \[
-\step{\eta}(\vec{x}) = X^2 (\transpose{A}(A X^{-2} \transpose{A})^{-1} A X^{-2} - \id_{\st})(\eta\cdot \rew + X^{-1}\cdot \vec{1})
+\step{\eta}(\vec{x}) = X^2 (\transpose{A}(A X^{-2} \transpose{A})^{-1} A X^2 - \id_{\st})(\eta\cdot \rew + X^{-1}\cdot \vec{1})
 \]
 Here $X$ is the diagonal matrix with $x_{s,a}$ as the diagonal entries.
 %
