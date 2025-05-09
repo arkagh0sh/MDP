@@ -5,7 +5,6 @@
 \begin{definition}
 %
 An \emphdef{\aodscc} is a partial function $f : \bsp{\pdp} \to 2^{(\ac\times\sig)}$ such that ...
-%
 \end{definition}
 %
 \begin{definition}
@@ -13,4 +12,34 @@ An \emphdef{\aodscc} is a partial function $f : \bsp{\pdp} \to 2^{(\ac\times\sig
 An \emphdef{\adscc} is a partial function $f : \bsp{\pdp} \to 2^{\ac}$ such that ...
 %
 \end{definition}
+%
+\begin{definition}
+The \emphdef{union} of two \adscc (resp. \aodscc) $f$ and $g$ is defined as ...
+\end{definition}
+%
+\begin{lemma}
+If the domain of two \adscc{} (resp. \aodscc) $f$ and $g$ have a non-empty intersection,
+then there union $f\cup g$ is also a \adscc{} (resp. \aodscc).
+\end{lemma}
+%
+\begin{definition}
+An \adscc{} (resp. \aodscc) is called \emphdef{maximal} if it is not a strict subset of another \adscc{} (resp. \aodscc).
+\end{definition}
+%
+\begin{corollary}
+For every $n\leq |\st|$, the set $\bsup[n]{\pdp}$ splits into disjoint maximal \adscc{} (resp. \aodscc) and singletons.
+\end{corollary}
+%
+\begin{definition}
+A action-observation pair $(a,\alpha)$ is called \emphdef{reversible} from a belief-support $S$ if there exists a word $x\in (\ac\times\sig)^*$ such that
+\[
+S \xrightarrow{(a,\alpha)} S' \xrightarrow{x} S \ .
+\]
+\end{definition}
+%
+\begin{lemma}
+For every \aodscc{} $\cS$, belief-supports $S\in \cS$ and $S'\in \bsup{\pdp}$, and reversible action-observation pair $(a,\alpha)$,
+if $S \xrightarrow{(a,\alpha)} S'$,
+then $S' \in\cS$.
+\end{lemma}
 %
