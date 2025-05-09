@@ -1,5 +1,21 @@
 % !TEX root = main.tex
 
+%%%%%%%%%%%%% common macros %%%%%%%%%%%%%%%
+\newcommand{\N}{\mathbb{N}}
+
+
+%%%%%%%%%%%%% other macros %%%%%%%%%%%%%%%
+
+\newcommand{\emphdef}[1]{\textcolor{red}{\emph{#1}}}
+
+%%%%%%%%%%%%% environments %%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+
 %%%%%%%%%%%%% MDP %%%%%%%%%%%%%%%
 
 \newcommand{\mdp}{\mathcal{M}}
@@ -9,6 +25,23 @@
 \newcommand{\rew}{\vec{r}}
 \newcommand{\prob}{\mathcal{P}}
 \newcommand{\init}{\beta}
+\newcommand{\pdp}{\mathcal{P}}
+\newcommand{\sig}{\mathsf{Sig}}
+\newcommand{\obpr}{\mathbb{P}} %observation probabilty
+
+\newcommand{\aut}[1]{\mathbb{A}(#1)}
+
+\newcommand{\bel}[1]{\mathbf{#1}} % use this for defining beliefs
+\newcommand{\bsp}[1]{\mathsf{BeliefSp}(#1)}
+\newcommand{\bsup}[2][]{\mathsf{BeliefSup}_{#1}(#2)}
+\newcommand{\supp}[1]{\mathsf{supp}(#1)}
+\newcommand{\baut}[1]{\mathbb{B}(#1)} % belief support automata
+
+%%%%%%%%%%%%% SCC %%%%%%%%%%%%%%%
+
+\newcommand{\Adscc}{Action dependent SCC}
+\newcommand{\aodscc}{action-observation dependent SCC}
+\newcommand{\adscc}{action dependent SCC}
 
 %%%%%%%%%%%%% LP %%%%%%%%%%%%%%%
 
