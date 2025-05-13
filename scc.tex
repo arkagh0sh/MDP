@@ -92,7 +92,37 @@ for some $n\in\N$ and actions $a_0,\dots,a_{n-1}$ such that $a_k\in f(\supp{\bel
 \end{notation}
 %
 \begin{lemma}
-Let $\bel{b}$ be a sub-belief such that $\supp{b}$ belongs to some non-distinguishing \adscc{} $f$.
+Let $\bel{b}$ be a sub-belief such that $\supp{\bel{b}}$ belongs to some non-distinguishing \adscc{} $f$.
 Then the set is $\reach{f}(\bel{b})$ is finite and computable.
+Moreover
+\[
+\preach(\bel{b}) = \preach(\bel{b}')
+\]
+for every $\bel{b}' \in \reach{f}(\bel{b})$.
+\end{lemma}
+%
+\begin{lemma}
+Let $\bel{b}$ be a sub-belief such that $\supp{\bel{b}}$ belongs to some non-distinguishing \adscc{} $f$.
+Then
+\[
+\preach(\bel{b}) =
+\max_{\bel{b}'\in\reach{f}(\bel{b}),
+a\notin f(\supp{\bel{b}})}
+\preach(\bel{b}',a)
+\]
+\end{lemma}
+%
+\begin{notation}
+For a sub-belief $\bel{b}$, an action $a$ and an observation $\alpha$,
+we use $\beltr{\bel{b}}{(a,\alpha)}$ to denote the belief state ... 
+\end{notation}
+%
+\begin{lemma}
+For every sub-belief $\bel{b}$ and action $a$,
+\[
+\preach(\bel{b},a) =
+\sum_{\alpha\in\sig}
+\preach(\pgiven{\alpha}{\bel{b},a}\cdot\bel{\beltr{\bel{b}}{(a,\alpha)}}) \ .
+\]
 \end{lemma}
 %
