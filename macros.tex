@@ -1,0 +1,85 @@
+% !TEX root = main.tex
+
+%%%%%%%%%%%%% common macros %%%%%%%%%%%%%%%
+\newcommand{\N}{\mathbb{N}}
+
+%%%%%%%%%%%%% letters %%%%%%%%%%%%%%%
+\newcommand{\cS}{\mathcal{S}}
+
+%%%%%%%%%%%%% other macros %%%%%%%%%%%%%%%
+
+\newcommand{\emphdef}[1]{\textcolor{red}{\emph{#1}}}
+\newcommand{\set}[1]{\left\lbrace #1\right\rbrace}
+\newcommand{\setof}[2]{\left\lbrace #1\ \mid\ #2 \right\rbrace}
+
+%%%%%%%%%%%%% environments %%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+
+%%%%%%%%%%%%% MDP %%%%%%%%%%%%%%%
+
+\newcommand{\mdp}{\mathcal{M}}
+\newcommand{\st}{\mathcal{S}}
+\newcommand{\ac}{\mathcal{A}}
+\newcommand{\df}{\lambda}
+\newcommand{\rew}{\vec{r}}
+\newcommand{\prob}{\mathcal{P}}
+\newcommand{\init}{\beta}
+\newcommand{\pdp}{\mathcal{P}}
+\newcommand{\sig}{\mathsf{Sig}}
+\newcommand{\obpr}{\mathbb{P}} %observation probabilty
+
+\newcommand{\aut}[1]{\mathbb{A}(#1)}
+
+\newcommand{\bel}[1]{\mathbf{#1}} % use this for defining beliefs
+\newcommand{\bsp}[1]{\mathsf{BeliefSp}(#1)}
+\newcommand{\bsup}[2][]{\mathsf{BeliefSup}_{#1}(#2)}
+\newcommand{\supp}[1]{\mathsf{supp}(#1)}
+\newcommand{\baut}[1]{\mathbb{B}(#1)} % belief support automata
+\newcommand{\res}[2]{\left.#1\right|_{#2}}
+
+%%%%%%%%%%%%% SCC %%%%%%%%%%%%%%%
+
+\newcommand{\Adscc}{Action dependent SCC}
+\newcommand{\aodscc}{action-observation dependent SCC}
+\newcommand{\adscc}{action dependent SCC}
+
+%%%%%%%%%%%%% LP %%%%%%%%%%%%%%%
+
+\newcommand{\lpMin}[2]
+{
+\begin{tabular}{l l}
+\textnormal{minimise}   & #1\\
+\textnormal{subject to} & #2
+\end{tabular}
+}
+
+\newcommand{\lpMax}[2]
+{
+\begin{tabular}{l l}
+\textnormal{maximise}   & #1\\
+\textnormal{subject to} & #2
+\end{tabular}
+}
+
+%%%%%%%%%%%%% linear algebra %%%%%%%%%%%%%%%
+
+\newcommand{\id}{\textnormal{Id}}
+\newcommand{\transpose}[1]{\ensuremath{#1^{\top}}}
+
+%%%%%%%%%%%%% optimisation %%%%%%%%%%%%%%%
+
+\newcommand{\step}[1]{n_{#1}}
+
+%%%%%%%%%%%%% reachability %%%%%%%%%%%%%%%
+
+\newcommand{\reach}[1]{\mathsf{Reach}_{#1}}
+
+\newcommand{\preach}{\mathsf{PReach}}
+

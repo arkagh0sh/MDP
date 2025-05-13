@@ -1,0 +1,118 @@
+% !TEX root = main.tex
+%
+\section{Markov Decision Processes}
+%
+\[
+\mdp = (\st,\ac,\prob,\rew,\df)
+\]
+%
+%\section{From MDP to LP}
+%%
+%\subsection{Value LP}
+%%
+%The primal problem is formulated in the following way.
+%%
+%\[
+%\lpMin{$\sum_{s\in\st} \init_s\cdot v_s$}{
+%$v_s \ \geq\ \rew(s,a) + \df \cdot \sum_{s'\in S} \prob_a(s,s')\cdot v_{s'}
+%\quad
+%\text{for $s\in \st$ and $a\in \ac$}$
+%}
+%\]
+%where $\init : \st \to [0,1]$ is the initial distribution.
+%%
+%The constraints can also be written as
+%\[
+%(I_{\ac} - \gamma\prob)\cdot \vec{v} \geq \rew \ .
+%\]
+%where $I_{\ac}$ is defined as
+%\[
+%I_{\ac} =
+%\begin{drcases}
+%\begin{bmatrix}
+%\ \id\ \\
+%\hline
+%\vdots \\
+%\hline
+%\ \id\ \\
+%\end{bmatrix}
+%\end{drcases}
+%\ac\text{-times}\ ,
+%\]
+%and $\prob$ is defined as
+%\[
+%\prob =
+%\begin{drcases}
+%\begin{bmatrix}
+%\vdots\\
+%\hline
+%\ \prob_a\ \\
+%\hline
+%\vdots \\
+%\end{bmatrix}
+%\end{drcases}
+%a\in\ac\ .
+%\]
+%\subsection{Policy LP}
+%%
+%The dual LP becomes
+%\[
+%\lpMax{$\sum_{s\in\st}\sum_{a\in\ac} \rew(s,a)\cdot x_{(s,a)}$}{
+%  $\transpose{(I_{\ac} - \df\prob)}\cdot\vec{x} = \init$ \\
+%& $\vec{x} \geq \vec{0}$ \ .
+%}
+%\]
+%%
+%Expanding using the definitions of $\ac$ an $\prob$ and doing a slight rearrangement of the terms,
+%we can see that the set of constraints for the dual LP contains,
+%for every $s\in\st$ the equation
+%\[
+%\sum_{a\in\ac} x_{s,a} \ -\ \df\cdot\sum_{s'\in S} \prob_a(s',s)\cdot x_{s',a}
+%\ = \ \init_{s} \ .
+%\]
+%%
+%The variables $x_{(s,a)}$ can be interpreted as expected discounted number of times the action $a\in\ac$ is chosen from the state $s\in S$.
+%\section{Newton's method}
+%%
+%We follow \cite{vishnoi}.
+%We use Newton's method on the dual system.
+%Since its system of constraitns contains a system of equations along with non-negativity constraints we have to use \cite[Section 11.2]{vishnoi}.
+%
+%Since $\df < 1$, the matrix $\id_{\st} - \df\cdot \prob_{a}$ is invertible for any $a\in\ac$,
+%hence we do not need to delete any rows.
+%
+%Let $A = \transpose{(I_{\ac} - \lambda\cdot\prob)}$.
+%Using \cite[equation 11.8]{vishnoi} we get that the Newton step is:
+%\[
+%\step{\eta}(\vec{x}) = X^2 (\transpose{A}(A X^{-2} \transpose{A})^{-1} A X^2 - \id_{\st})(\eta\cdot \rew + X^{-1}\cdot \vec{1})
+%\]
+%Here $X$ is the diagonal matrix with $x_{s,a}$ as the diagonal entries.
+%
+\section{Partially observable MDPs}
+%
+\[
+\pdp = (\mdp,\sig,\obpr)
+\]
+%
+For the remainder of the article, fix a POMDP $\pdp$. 
+From $\pdp$, we can construct a probabilistic automata \emphdef{$\aut{\pdp}$} on the alphabet $\ac \times \sig$ as ...
+%
+\begin{definition}
+The POMDP $\pdp$ is called \emphdef{deterministic} if $\aut{\pdp}$ is deterministic.
+\end{definition}
+%
+A \emphdef{belief of $\pdp$} is defined as ...
+Beliefs are denoted as boldface letters $\bel{a},\bel{b},\dots$.
+The space of all beliefs of $\pdp$ is denote as \emphdef{$\bsp{\pdp}$}.
+The \emphdef{support} of a belief $\bel{b}$ is defined as
+\[
+\emphdef{$\supp{\bel{b}}$} = ...
+\]
+For $n\in\N$, we use \emphdef{$\bsup[n]{\pdp}$} to denote the set of all belief supports of size $n$.
+Note that $\bsup[n]{\pdp} = \emptyset$ when $n > |\st|$.
+We define
+\[
+\emphdef{$\bsup{\pdp}$} = \bigcup_{n\in\N} \bsup[n]{\pdp} \ .
+\]
+We define a deterministic automata \emphdef{$\baut{\pdp}$} with set of states $\bsup{\pdp}$ and alphabet $\ac\times\sig$ as ...
+%

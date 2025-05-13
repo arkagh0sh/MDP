@@ -1,0 +1,98 @@
+% !TEX root = main.tex
+%
+\section{Strongly connected components}
+%
+\begin{definition}
+%
+An \emphdef{\aodscc} is a partial function $f : \bsp{\pdp} \to 2^{(\ac\times\sig)}$ such that ...
+\end{definition}
+%
+\begin{definition}
+%
+An \emphdef{\adscc} is a partial function $f : \bsp{\pdp} \to 2^{\ac}$ such that ...
+%
+\end{definition}
+%
+\begin{definition}
+The \emphdef{union} of two \adscc (resp. \aodscc) $f$ and $g$ is defined as ...
+\end{definition}
+%
+\begin{lemma}
+If the domain of two \adscc{} (resp. \aodscc) $f$ and $g$ have a non-empty intersection,
+then there union $f\cup g$ is also a \adscc{} (resp. \aodscc).
+\end{lemma}
+%
+\begin{definition}
+An \adscc{} (resp. \aodscc) is called \emphdef{maximal} if it is not a strict subset of another \adscc{} (resp. \aodscc).
+\end{definition}
+%
+\begin{corollary}
+For every $n\leq |\st|$, the set $\bsup[n]{\pdp}$ splits into disjoint maximal \adscc{} (resp. \aodscc) and singletons.
+\end{corollary}
+%
+\begin{definition}
+A action-observation pair $(a,\alpha)$ is called \emphdef{reversible} from a belief-support $S$ if there exists a word $x\in (\ac\times\sig)^*$ such that
+\[
+S \xrightarrow{(a,\alpha)} S' \xrightarrow{x} S \ .
+\]
+\end{definition}
+%
+\begin{lemma}
+For every \aodscc{} $\cS$, belief-supports $S\in \cS$ and $S'\in \bsup{\pdp}$, and reversible action-observation pair $(a,\alpha)$,
+if $S \xrightarrow{(a,\alpha)} S'$,
+then $S' \in\cS$.
+\end{lemma}
+%
+\begin{definition}
+A \emphdef{sub-belief} is a function $\bel{b}$ from $\st$ to $[0,1]$ such that
+\[
+\sum_{p\in\st} \bel{b}(p) \leq 1 \ .
+\]
+\end{definition}
+%
+\begin{notation}
+For a belief $\bel{b}$ and subset of states $S\subseteq \st$,
+\emphdef{$\res{\bel{b}}{S}$} denotes the sub-belief defined as
+\[
+\res{\bel{b}}{S} =
+\begin{cases}
+\bel{b}(p) & \text{if $p\in\st$} \\
+0 & \text{otherwise.}
+\end{cases}
+\]
+\end{notation}
+%
+\begin{definition}
+For a sub-belief $\bel{b}$,
+let $\preach(\bel{b})$ denote ....
+\end{definition}
+%
+\begin{lemma}
+Let $\bel{b}$ be a sub-belief such that $\supp{\bel{b}}$ belongs to a distinguishing \adscc{}.
+Then there exists two computable non-empty disjoint subsets $S,T\subseteq \supp{\bel{b}}$ such that $S\cup T = \supp{\bel{b}}$ and
+\[
+\preach(\bel{b}) =
+\preach(\res{\bel{b}}{S}) +
+\preach(\res{\bel{b}}{T}) \ .
+\]
+\end{lemma}
+%
+\begin{notation}
+For a sub-belief $\bel{b}$ and a function $f : \bsup{\pdp} \to \ac$,
+by $\reach{f}(\bel{b})$ we denote the set of sub-beliefs $\bel{b}'$ such that
+\[
+\bel{b} =
+\bel{b}_0 \xrightarrow{(a_0,\alpha_0)}
+\bel{b}_1 \xrightarrow{(a_1,\alpha_1)}
+\dots
+\xrightarrow{(a_{n-1},\alpha_{n-1})}
+\bel{b}_n = \bel{b}'
+\]
+for some $n\in\N$ and actions $a_0,\dots,a_{n-1}$ such that $a_k\in f(\supp{\bel{b}_k})$ for all $k\in\set{0,\dots,n-1}$.
+\end{notation}
+%
+\begin{lemma}
+Let $\bel{b}$ be a sub-belief such that $\supp{b}$ belongs to some non-distinguishing \adscc{} $f$.
+Then the set is $\reach{f}(\bel{b})$ is finite and computable.
+\end{lemma}
+%
