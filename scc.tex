@@ -68,7 +68,14 @@ let $\preach(\bel{b})$ denote ....
 \end{definition}
 %
 \begin{definition}
-    A \adscc{} is called \emphdef{distinguishing} if there is a belief ...
+ An \adscc{} $f$ is called \emphdef{distinguishing} if there exists
+\begin{enumerate}
+\item some belief-support $S$ is in the domain of $f$,
+\item action $a \in f(S)$,
+\item states $p,q\in S$, and
+\item observations $\alpha,\beta$,
+\end{enumerate}
+such that $\obpr(p,a,\alpha) \neq \obpr(q,a,\beta)$. 
 \end{definition}
 %
 \begin{lemma}
