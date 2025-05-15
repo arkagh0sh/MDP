@@ -1,5 +1,8 @@
 % !TEX root = main.tex
 
+%%%%%%%%%%%%% comments %%%%%%%%%%%%%%%
+\newcommand{\arka}[1]{\textcolor{blue}{\textbf{Arka:}#1}}
+
 %%%%%%%%%%%%% common macros %%%%%%%%%%%%%%%
 \newcommand{\N}{\mathbb{N}}
 
@@ -15,13 +18,6 @@
 
 %%%%%%%%%%%%% environments %%%%%%%%%%%%%%%
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{notation}[theorem]{Notation}
 
 %%%%%%%%%%%%% MDP %%%%%%%%%%%%%%%
 
@@ -38,7 +34,7 @@
 
 \newcommand{\aut}[1]{\mathbb{A}(#1)}
 
-\newcommand{\bel}[1]{\mathbf{#1}} % use this for defining beliefs
+\newcommand{\bel}[1]{\mathbold{#1}} % use this for defining beliefs
 \newcommand{\bsp}[1]{\mathsf{BeliefSp}(#1)}
 \newcommand{\bsup}[2][]{\mathsf{BeliefSup}_{#1}(#2)}
 \newcommand{\supp}[1]{\mathsf{supp}(#1)}

@@ -35,8 +35,23 @@ is an \adscc{}.
 \end{definition}
 %
 \begin{definition}
-The \emphdef{union} of two \adscc{} (resp. \aodscc) $f$ and $g$ is defined as ...
+The \emphdef{union} of two \adscc{} (resp 
+\aodscc{}) $f$ and $g$ is the partial function $h$ whose domain is the union of the domains of $f$ and $g$,
+and for an element $x$ in its domain
+\[
+h(x) =
+\begin{cases}
+f(x) & \text{if $x$ is not in the domain of $g$,} \\
+g(x) & \text{if $x$ is not in the domain of $f$,} \\
+f(x)\cup g(x) & \text{otherwise}. \\
+\end{cases}
+\]
 \end{definition}
+%
+\begin{remark}
+The union of two \adscc{} (resp.\ \aodscc{}) may not be an \adscc{} (resp.\ \aodscc).
+For example ... \arka{TODO}
+\end{remark}
 %
 \begin{lemma}
 If the domain of two \adscc{} (resp. \aodscc) $f$ and $g$ have a non-empty intersection,
@@ -85,7 +100,8 @@ For a belief $\bel{b}$ and subset of states $S\subseteq \st$,
 %
 \begin{definition}
 For a sub-belief $\bel{b}$,
-let $\preach(\bel{b})$ denote ....
+let $\preach(\bel{b})$ denote the supremum of probabilties of winning the reachability game from the sub-belief $\bel{b}$.
+\arka{TODO:fix a set of final states so that this definition makes sense}
 \end{definition}
 %
 \begin{definition}
@@ -93,13 +109,13 @@ let $\preach(\bel{b})$ denote ....
 \begin{enumerate}
 \item some belief-support $S$ is in the domain of $f$,
 \item action $a \in f(S)$,
-\item states $p,q\in S$, and
-\item observations $\alpha,\beta$,
+\item observation $\alpha$, and
+\item states $p,q\in S$,
 \end{enumerate}
-such that $\obpr(p,a,\alpha) \neq \obpr(q,a,\beta)$. 
+such that $\obpr(p,a,\alpha) \neq \obpr(q,a,\alpha)$. 
 \end{definition}
 %
-\begin{lemma}
+\begin{lemma}\label[lemma]{lem:adscc pr}
 Let $\bel{b}$ be a sub-belief such that $\supp{\bel{b}}$ belongs to a distinguishing \adscc{}.
 Then there exists two computable non-empty disjoint subsets $S,T\subseteq \supp{\bel{b}}$ such that $S\cup T = \supp{\bel{b}}$ and
 \[
@@ -145,8 +161,7 @@ a\notin f(\supp{\bel{b}})}
 \end{lemma}
 %
 \begin{notation}
-For a sub-belief $\bel{b}$, an action $a$ and an observation $\alpha$,
-we use $\beltr{\bel{b}}{(a,\alpha)}$ to denote the belief state ... 
+We overload the meaning of the symbol $\delta$ to also denote the belief update function.
 \end{notation}
 %
 \begin{lemma}
@@ -154,7 +169,7 @@ For every sub-belief $\bel{b}$ and action $a$,
 \[
 \preach(\bel{b},a) =
 \sum_{\alpha\in\sig}
-\preach(\pgiven{\alpha}{\bel{b},a}\cdot\bel{\beltr{\bel{b}}{(a,\alpha)}}) \ .
+\preach(\pgiven{\alpha}{\bel{b},a}\cdot{\beltr{\bel{b}}{(a,\alpha)}}) \ .
 \]
 \end{lemma}
 %

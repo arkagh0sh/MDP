@@ -1,13 +1,13 @@
 \documentclass[12pt]{article}
 %
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{mathtools}
+\usepackage{amssymb,amsmath,amsthm}
+%\usepackage{mathtools}
 \usepackage{hyperref}
-\usepackage{cleveref}
+\usepackage[capitalise]{cleveref}
 \usepackage{xcolor}
 %
-\usepackage[backend=bibtex]{biblatex}
-\addbibresource{main.bib}
+%\usepackage[backend=bibtex]{biblatex}
+%addbibresource{main.bib}
 %
 \usepackage{setspace}
 \onehalfspacing
@@ -17,6 +17,16 @@
 \usepackage{charter}
 %\usepackage{mathpazo}
 \usepackage{eulervm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{remark}[theorem]{Remark}
+
 
 \title{Value iteration on Deterministic POMDPs}
 %
@@ -34,7 +44,8 @@
 %
 \input{prelim}
 \input{scc}
+\input{recur}
 %
-\printbibliography
+%\printbibliography
 %
 \end{document}
