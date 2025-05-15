@@ -1,5 +1,18 @@
 % !TEX root = main.tex
 
+%%%%%%%%%%%%% environments %%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{notation}[theorem]{Notation}
+
+
+
 %%%%%%%%%%%%% comments %%%%%%%%%%%%%%%
 \newcommand{\arka}[1]{\textcolor{blue}{\textbf{Arka:}#1}}
 
@@ -8,6 +21,7 @@
 
 %%%%%%%%%%%%% letters %%%%%%%%%%%%%%%
 \newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
 
 %%%%%%%%%%%%% other macros %%%%%%%%%%%%%%%
 
@@ -80,4 +94,3 @@
 
 \newcommand{\reach}[1]{\mathsf{Reach}_{#1}}
 \newcommand{\preach}{\mathsf{PReach}}
-
