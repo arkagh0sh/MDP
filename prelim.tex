@@ -95,18 +95,28 @@
 \]
 %
 For the remainder of the article, fix a POMDP $\pdp$. 
-From $\pdp$, we can construct a probabilistic automata \emphdef{$\aut{\pdp}$} on the alphabet $\ac \times \sig$ as ...
+From $\pdp$, we can construct a (possibly) non-deterministic finite automata \emphdef{$\aut{\pdp}$} on the alphabet $\ac \times \sig$ with $\st$ as the set of states and the transition relation $\Delta$ defined as
+\[
+(p,(a,\alpha),q) \in \Delta
+\]
+if there is a non-zero probabilty of going to the state $q$ from the state $p$ after taking the action $a$ and seeing the observation $\alpha$. 
 %
 \begin{definition}
 The POMDP $\pdp$ is called \emphdef{deterministic} if $\aut{\pdp}$ is deterministic.
+
+In this case we use $\delta$ to denote the transition \emph{function} of $\aut{\pdp}$.
 \end{definition}
 %
-A \emphdef{belief of $\pdp$} is defined as ...
+\begin{definition}
+A \emphdef{belief of $\pdp$} is a distribution over $\st$.
+\end{definition}
+%
 Beliefs are denoted as boldface letters $\bel{a},\bel{b},\dots$.
 The space of all beliefs of $\pdp$ is denote as \emphdef{$\bsp{\pdp}$}.
 The \emphdef{support} of a belief $\bel{b}$ is defined as
 \[
-\emphdef{$\supp{\bel{b}}$} = ...
+\emphdef{$\supp{\bel{b}}$} = 
+\setof{q\in\st}{\bel{b}(q)\neq 0} \ .
 \]
 For $n\in\N$, we use \emphdef{$\bsup[n]{\pdp}$} to denote the set of all belief supports of size $n$.
 Note that $\bsup[n]{\pdp} = \emptyset$ when $n > |\st|$.
@@ -114,5 +124,13 @@ We define
 \[
 \emphdef{$\bsup{\pdp}$} = \bigcup_{n\in\N} \bsup[n]{\pdp} \ .
 \]
-We define a deterministic automata \emphdef{$\baut{\pdp}$} with set of states $\bsup{\pdp}$ and alphabet $\ac\times\sig$ as ...
+%
+Extending the transition function $\delta$ of $\aut{\pdp}$ to $\bsup{\pdp}$ as
+\[
+\delta(S,(a,\alpha)) =
+\setof{\delta(p,(a,\alpha))}{p\in S}
+\]
+we get a deterministic finite automata \emphdef{$\baut{\pdp}$} with set of states $\bsup{\pdp}$ and alphabet $\ac\times\sig$.
+
+Whenever convenient, we consider $\baut{\pdp}$ to be a directed graph with edges labelled by elements from $\ac\times\sig$.
 %

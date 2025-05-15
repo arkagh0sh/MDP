@@ -4,17 +4,38 @@
 %
 \begin{definition}
 %
-An \emphdef{\aodscc} is a partial function $f : \bsp{\pdp} \to 2^{(\ac\times\sig)}$ such that ...
+An \emphdef{\aodscc} is a partial function $f : \bsp{\pdp} \to 2^{(\ac\times\sig)}$ such that:
+\begin{enumerate}
+    \item for every belief supports $S$ in the domain of $f$ and action observation pair $(a,\alpha) \in f(S)$,
+    the belief support $\delta(S,(a,\alpha))$ is also in the domain of $f$,
+    \item for every two belief support $S$ and $T$ in the domain of $F$, there exists a path
+    \[
+    S = S_0 \xrightarrow{(a_0,\alpha_0)}
+    S_1 \xrightarrow{a_1,\alpha_1} 
+    \dots
+    \xrightarrow{a_{n-1},\alpha_{n-1}}
+    S_n = T
+    \]
+    in $\baut{\pdp}$ such that $(a_k,\alpha_k)\in f(S_k)$ for all $k\in\set{0,\dots,n-1}$.
+\end{enumerate}
 \end{definition}
 %
 \begin{definition}
 %
-An \emphdef{\adscc} is a partial function $f : \bsp{\pdp} \to 2^{\ac}$ such that ...
+An \emphdef{\adscc} is a partial function $f : \bsp{\pdp} \to 2^{\ac}$ such that 
 %
 \end{definition}
 %
 \begin{definition}
-The \emphdef{union} of two \adscc (resp. \aodscc) $f$ and $g$ is defined as ...
+An \emphdef{\scc{}} is a subset of belief states $\cS$ such that
+\[
+S\in\cS \ \mapsto \ac\times\sig
+\]
+is an \adscc{}. 
+\end{definition}
+%
+\begin{definition}
+The \emphdef{union} of two \adscc{} (resp. \aodscc) $f$ and $g$ is defined as ...
 \end{definition}
 %
 \begin{lemma}
