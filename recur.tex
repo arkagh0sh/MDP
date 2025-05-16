@@ -1,6 +1,23 @@
-% Tex root = main.tex
+% !TEX root = main.tex
 %
-\section{Value Recursion}
+\section{Value recursion}
+%
+\begin{definition}
+Define a quasi order \emphdef{$\tord$} on $\bsup{\pdp}$ as
+\[
+S \tord T
+\quad\iff\quad
+\text{there exists $x\in (\ac{\times}\sig)^*$ such that
+$\delta(S,x) = T$.}
+\]
+Let \emphdef{$\teq$} to be the equivalence relation defined as
+\[
+S \teq T
+\quad\iff\quad
+\text{$S\tord T$ and $T\tord S$.}
+\]
+\end{definition}
+%
 %
 \section{Finitely ambiguous}
 %
